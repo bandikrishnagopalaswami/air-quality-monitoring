@@ -40,6 +40,25 @@ def index():
     aqi_data = get_aqi(city)
     return render_template("index.html", data=aqi_data)
 
+@app.route("/features")
+def features():
+    return render_template("features.html")
+
+@app.route("/architecture")
+def architecture():
+    return render_template("architecture.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/demo", methods=["GET","POST"])
+def demo():
+    data = None
+    if request.method == "POST":
+        city = request.form.get("city")
+        data = get_aqi(city)
+    return render_template("demo.html", data=data)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1 class="section-title">Live AQI Demo</h1>
+
+<div class="demo-container">
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city" required>
+        <button class="btn-primary">Check AQI</button>
+    </form>
+
+    {% if data %}
+    <div class="aqi-card">
+        <h2>City: {{ data.city }}</h2>
+        <p><strong>AQI:</strong> {{ data.aqi }}</p>
+        <p><strong>PM2.5:</strong> {{ data.pm25 }}</p>
+        <p><strong>PM10:</strong> {{ data.pm10 }}</p>
+        <p><strong>Temperature:</strong> {{ data.temp }} °C</p>
+        <p><strong>Humidity:</strong> {{ data.humidity }} %</p>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

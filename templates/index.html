@@ -1,44 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Air Quality Monitoring</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
 
-    <div class="container">
-        <h1>🌫 Real-Time Air Quality Monitoring</h1>
+<section class="hero">
+    <h1 class="title">Air Quality Monitoring System</h1>
+    <p class="subtitle">Real-Time AQI Monitoring with DevOps CI/CD Pipeline</p>
 
-        <form method="POST" action="/">
-            <input type="text" name="city" placeholder="Enter city name" required>
-            <button type="submit">Check AQI</button>
-        </form>
-
-        <h2>City: {{ data.city }}</h2>
-
-        <div class="card">
-
-            <p class="label">AQI:</p>
-            <p class="value">{{ data.aqi }}</p>
-
-            <p class="label">PM2.5:</p>
-            <p class="value">{{ data.pm25 }}</p>
-
-            <p class="label">PM10:</p>
-            <p class="value">{{ data.pm10 }}</p>
-
-            <p class="label">Temperature:</p>
-            <p class="value">{{ data.temp }} °C</p>
-
-            <p class="label">Humidity:</p>
-            <p class="value">{{ data.humidity }} %</p>
-
-        </div>
-
-        <p class="footer">Live AQI Data • Powered by Flask + Docker</p>
+    <div class="hero-buttons">
+        <a href="/demo" class="btn-primary">Try Live Demo</a>
+        <a href="https://github.com/yourrepo" class="btn-secondary">View on GitHub</a>
     </div>
 
-</body>
-</html>
+    <div class="tech-tags">
+        <span>Flask</span>
+        <span>Docker</span>
+        <span>GitHub Actions</span>
+        <span>CI/CD</span>
+        <span>AQI API</span>
+    </div>
+</section>
+
+{% endblock %}
